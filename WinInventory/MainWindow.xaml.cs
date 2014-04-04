@@ -95,8 +95,17 @@ namespace WinInventory
                                     for (int i = 0; i < key.GetSubKeyNames().Length; i++)
                                     {
                                         productname = (string)key.OpenSubKey(key.GetSubKeyNames()[i], false).GetValue("ConvertToEdition");
-                                        digitalProductId = (byte[])key.OpenSubKey(key.GetSubKeyNames()[i], false).GetValue("DigitalProductId");
-                                        productkeys.Add(productname, decodeMicrosoftProductID(digitalProductId));
+                                        digitalProductId = (byte[])key.OpenSubKey(key.GetSubKeyNames()[i], false).GetValue("DigitalProductID");
+
+                                        if (productname == null | digitalProductId == null)
+                                        {
+                                            continue;
+                                        }
+                                        else
+                                        {
+                                            productkeys.Add(productname, decodeMicrosoftProductID(digitalProductId));
+                                        }
+
                                     }
                                 }
                                 key = key.OpenSubKey(@"SOFTWARE\wow6432node\Microsoft\Office\11.0\Registration", false);
@@ -105,20 +114,37 @@ namespace WinInventory
                                     for (int i = 0; i < key.GetSubKeyNames().Length; i++)
                                     {
                                         productname = (string)key.OpenSubKey(key.GetSubKeyNames()[i], false).GetValue("ConvertToEdition");
-                                        digitalProductId = (byte[])key.OpenSubKey(key.GetSubKeyNames()[i], false).GetValue("DigitalProductId");
-                                        productkeys.Add(productname, decodeMicrosoftProductID(digitalProductId));
+                                        digitalProductId = (byte[])key.OpenSubKey(key.GetSubKeyNames()[i], false).GetValue("DigitalProductID");
+
+                                        if (productname == null | digitalProductId == null)
+                                        {
+                                            continue;
+                                        }
+                                        else
+                                        {
+                                            productkeys.Add(productname, decodeMicrosoftProductID(digitalProductId));
+                                        }
+
                                     }
                                 }
                                 break;
                             case 12:
-                                key = key.OpenSubKey(@"SOFTWARE\Microsoft\Office\12.0\Registration", false);
                                 if (key != null)
                                 {
                                     for (int i = 0; i < key.GetSubKeyNames().Length; i++)
                                     {
                                         productname = (string)key.OpenSubKey(key.GetSubKeyNames()[i], false).GetValue("ConvertToEdition");
-                                        digitalProductId = (byte[])key.OpenSubKey(key.GetSubKeyNames()[i], false).GetValue("DigitalProductId");
-                                        productkeys.Add(productname, decodeMicrosoftProductID(digitalProductId));
+                                        digitalProductId = (byte[])key.OpenSubKey(key.GetSubKeyNames()[i], false).GetValue("DigitalProductID");
+
+                                        if (productname == null | digitalProductId == null)
+                                        {
+                                            continue;
+                                        }
+                                        else
+                                        {
+                                            productkeys.Add(productname, decodeMicrosoftProductID(digitalProductId));
+                                        }
+
                                     }
                                 }
                                 key = key.OpenSubKey(@"SOFTWARE\wow6432node\Microsoft\Office\12.0\Registration", false);
@@ -127,8 +153,18 @@ namespace WinInventory
                                     for (int i = 0; i < key.GetSubKeyNames().Length; i++)
                                     {
                                         productname = (string)key.OpenSubKey(key.GetSubKeyNames()[i], false).GetValue("ConvertToEdition");
-                                        digitalProductId = (byte[])key.OpenSubKey(key.GetSubKeyNames()[i], false).GetValue("DigitalProductId");
-                                        productkeys.Add(productname, decodeMicrosoftProductID(digitalProductId));
+                                        digitalProductId = (byte[])key.OpenSubKey(key.GetSubKeyNames()[i], false).GetValue("DigitalProductID");
+
+                                        if (productname == null | digitalProductId == null)
+                                        {
+                                            System.Diagnostics.Trace.WriteLine(key.GetSubKeyNames()[i]);
+                                            continue;
+                                        }
+                                        else
+                                        {
+                                            productkeys.Add(productname, decodeMicrosoftProductID(digitalProductId));
+                                        }
+
                                     }
                                 }
                                 break;
@@ -139,8 +175,17 @@ namespace WinInventory
                                     for (int i = 0; i < key.GetSubKeyNames().Length; i++)
                                     {
                                         productname = (string)key.OpenSubKey(key.GetSubKeyNames()[i], false).GetValue("ConvertToEdition");
-                                        digitalProductId = (byte[])key.OpenSubKey(key.GetSubKeyNames()[i], false).GetValue("DigitalProductId");
-                                        productkeys.Add(productname, decodeMicrosoftProductID(digitalProductId));
+                                        digitalProductId = (byte[])key.OpenSubKey(key.GetSubKeyNames()[i], false).GetValue("DigitalProductID");
+                                        
+                                        if(productname==null | digitalProductId==null)
+                                        {
+                                            continue;
+                                        }
+                                        else
+                                        {
+                                            productkeys.Add(productname, decodeMicrosoftProductID(digitalProductId));
+                                        }
+                                        
                                     }
                                 }
                                 key = key.OpenSubKey(@"SOFTWARE\wow6432node\Microsoft\Office\14.0\Registration", false);
@@ -150,6 +195,10 @@ namespace WinInventory
                                     {
                                         productname = (string)key.OpenSubKey(key.GetSubKeyNames()[i], false).GetValue("ConvertToEdition");
                                         digitalProductId = (byte[])key.OpenSubKey(key.GetSubKeyNames()[i], false).GetValue("DigitalProductId");
+                                        if (productname == null | digitalProductId == null)
+                                        {
+                                            continue;
+                                        }
                                         productkeys.Add(productname, decodeMicrosoftProductID(digitalProductId));
                                     }
                                 }
@@ -161,8 +210,17 @@ namespace WinInventory
                                     for (int i = 0; i < key.GetSubKeyNames().Length; i++)
                                     {
                                         productname = (string)key.OpenSubKey(key.GetSubKeyNames()[i], false).GetValue("ConvertToEdition");
-                                        digitalProductId = (byte[])key.OpenSubKey(key.GetSubKeyNames()[i], false).GetValue("DigitalProductId");
-                                        productkeys.Add(productname, decodeMicrosoftProductID(digitalProductId));
+                                        digitalProductId = (byte[])key.OpenSubKey(key.GetSubKeyNames()[i], false).GetValue("DigitalProductID");
+
+                                        if (productname == null | digitalProductId == null)
+                                        {
+                                            continue;
+                                        }
+                                        else
+                                        {
+                                            productkeys.Add(productname, decodeMicrosoftProductID(digitalProductId));
+                                        }
+
                                     }
                                 }
                                 key = key.OpenSubKey(@"SOFTWARE\wow6432node\Microsoft\Office\15.0\Registration", false);
@@ -171,8 +229,17 @@ namespace WinInventory
                                     for (int i = 0; i < key.GetSubKeyNames().Length; i++)
                                     {
                                         productname = (string)key.OpenSubKey(key.GetSubKeyNames()[i], false).GetValue("ConvertToEdition");
-                                        digitalProductId = (byte[])key.OpenSubKey(key.GetSubKeyNames()[i], false).GetValue("DigitalProductId");
-                                        productkeys.Add(productname, decodeMicrosoftProductID(digitalProductId));
+                                        digitalProductId = (byte[])key.OpenSubKey(key.GetSubKeyNames()[i], false).GetValue("DigitalProductID");
+
+                                        if (productname == null | digitalProductId == null)
+                                        {
+                                            continue;
+                                        }
+                                        else
+                                        {
+                                            productkeys.Add(productname, decodeMicrosoftProductID(digitalProductId));
+                                        }
+
                                     }
                                 }
                                 break;
@@ -180,9 +247,9 @@ namespace WinInventory
                         break;
                 }
             }
-            catch
+            catch (Exception e)
             {
-
+                System.Diagnostics.Trace.WriteLine(e.Message);
             }
             return productkeys;
         }
@@ -319,7 +386,7 @@ namespace WinInventory
             }
             
             List<string> notReachableDevices = new List<string>();
-
+            
             if (!osSelected)
             {
                 Parallel.ForEach(targetDevices, computername =>
@@ -346,7 +413,7 @@ namespace WinInventory
                 });
             }
             targetDevices.RemoveAll(device => notReachableDevices.Contains(device));
-
+            
             Parallel.ForEach(choices, choice =>
             {
                 if (choice.Contains("mso"))
