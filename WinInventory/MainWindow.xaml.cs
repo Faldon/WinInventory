@@ -340,7 +340,15 @@ namespace WinInventory
 
             foreach (SearchResult item in ds.FindAll())
             {
-                String osVersion = item.GetDirectoryEntry().Properties["operatingSystemVersion"].Value.ToString();
+                String osVersion;
+                try
+                {
+                    osVersion = item.GetDirectoryEntry().Properties["operatingSystemVersion"].Value.ToString();
+                }
+                catch
+                {
+                    continue;
+                }
 
                 if (osSelected) {
                     Parallel.ForEach(choices, choice =>
